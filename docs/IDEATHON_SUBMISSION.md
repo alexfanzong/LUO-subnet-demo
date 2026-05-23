@@ -19,8 +19,6 @@
 | Anti-gaming | Hidden synthetic traps, rotating corpus, held-out claims, staked challenges |
 | Market | Pre-opinion legal risk intelligence for RWA, stablecoins, custody, cross-border payments, and DeFi |
 
-![LUO demo opening](../submission_assets/screenshots/01_opening.png)
-
 ---
 
 ## 1. Introduction: Legal Uncertainty as Intelligence
