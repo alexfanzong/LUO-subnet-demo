@@ -7,6 +7,18 @@
 **Affiliation:** Cornell Law School / Programmable Compliance Architect  
 **Demo context:** Bittensor AI Subnet Ideathon, Shanghai, 2026-05-23
 
+> On Bittensor, LUO lets permissionless miners produce cross-jurisdictional legal risk topology maps through evidence-constrained claim verification.
+
+| Layer | LUO Design |
+| --- | --- |
+| Subnet commodity | Cross-jurisdictional legal risk topology maps |
+| Miner task | Produce structured claim-level audits from legal evidence |
+| Validator task | Check citation coverage, synthetic trap resistance, and claim-evidence closure |
+| Ground truth | Evidence boundary, not final legal truth |
+| Demo benchmark | Tornado Cash across the United States, Netherlands, Switzerland, and Hong Kong |
+| Anti-gaming | Hidden synthetic traps, rotating corpus, held-out claims, staked challenges |
+| Market | Pre-opinion legal risk intelligence for RWA, stablecoins, custody, cross-border payments, and DeFi |
+
 ![LUO demo opening](../submission_assets/screenshots/01_opening.png)
 
 ---
@@ -75,8 +87,9 @@ Validators score miner outputs across three independent dimensions:
 2. **Synthetic Trap Resistance**  
    Does the miner avoid citing synthetic trap authorities? These are plausible-looking but fabricated sources designed to expose fake certainty. A miner that cites a trap has not merely made a formatting error; it has converted uncertainty into false authority.
 
-3. **Reasoning Coherence**  
+3. **Claim-Evidence Closure**  
    Does the reasoning preserve the structure of legal divergence? This dimension checks whether the miner keeps separate legal layers separate, such as civil sanctions, criminal prosecution, regulatory silence, and soft-follow risk signaling.
+   Claim-evidence closure measures whether a legal claim actually follows from the cited evidence, rather than whether the prose sounds persuasive.
 
 The MVP uses a reproducible demo scoring formula:
 
@@ -84,12 +97,20 @@ The MVP uses a reproducible demo scoring formula:
 Composite Score =
 0.10 * Citation Coverage
 + 0.60 * Synthetic Trap Resistance
-+ 0.30 * Reasoning Coherence
++ 0.30 * Claim-Evidence Closure
 ```
 
-The weights are intentionally demo-oriented. Citation coverage is a minimum threshold. Synthetic trap resistance carries the highest weight because the MVP is designed to test the core failure mode: fabricated certainty. Reasoning coherence captures whether the miner preserves legal divergence rather than compressing it.
+The weights are intentionally demo-oriented. Citation coverage is a minimum threshold. Synthetic trap resistance carries the highest weight because the MVP is designed to test the core failure mode: fabricated certainty. Claim-evidence closure captures whether the miner preserves legal divergence rather than compressing it.
+
+### Reward Logic
+
+LUO does not use a pure winner-takes-all reward model in the MVP. Outputs that hit synthetic traps fall below the reward threshold or receive severe penalties for that round. Among outputs that pass the threshold, rewards are allocated continuously according to the composite score. This matters because LUO's commodity is a legal risk topology map, not a single final answer. A pure winner-takes-all design would over-compress useful disagreement and push miners toward one dominant narrative, which is exactly what LUO is designed to avoid.
 
 In production, these weights can be adjusted by task type, validator challenge outcomes, and expert-reviewed benchmark performance.
+
+### Anti-Gaming Design
+
+LUO assumes miners will try to game the benchmark. The anti-gaming layer combines hidden synthetic traps, rotating corpora, held-out claims, claim-level scoring, and a future staked challenge mechanism. Public examples can teach the audit format, but the decisive test set and trap set are not fully disclosed during evaluation. This preserves transparency of the method while preventing simple memorization.
 
 ### Staked Challenge Layer
 
@@ -139,7 +160,7 @@ The MVP demonstrates three miner quality tiers:
 
 **Figure 2. Validator audit screenshot.** Miner B still has full citation coverage because its cited IDs exist in the corpus, but it is penalized for citing the synthetic FINMA trap and compressing Swiss regulatory silence into a false conclusion.
 
-| Miner | Behavior | Citation Coverage | Trap Resistance | Reasoning Coherence | Composite |
+| Miner | Behavior | Citation Coverage | Trap Resistance | Claim-Evidence Closure | Composite |
 | --- | --- | ---: | ---: | ---: | ---: |
 | Miner A | faithfully preserves divergence | 1.0000 | 1.0000 | 0.9500 | 0.985 |
 | Miner B | compresses divergence and cites one trap | 1.0000 | 0.5000 | 0.6500 | 0.595 |
@@ -192,6 +213,10 @@ Traditional AI evaluation rewards a model for matching an answer. Legal reasonin
 Bittensor's miner-validator architecture is well suited to this. Miners compete to generate better legal uncertainty maps. Validators audit those maps. Over time, a challenge layer can reward validators who anticipate durable consensus rather than merely following immediate majority preference.
 
 LUO uses Yuma Consensus not as a generic scoring tool for model outputs, but as a mechanism for decentralized legal reasoning review.
+
+## How Yuma Applies in LUO
+
+In LUO, Yuma Consensus is not used to vote on legal truth. It is used to coordinate evidence-bound review. A miner submits a legal risk topology map. Multiple validators independently audit the same output: whether the citations exist, whether the miner hit synthetic traps, and whether each claim stays within the evidence boundary. Yuma aggregates those validator judgments into incentive weights. Validators that repeatedly deviate from reproducible evidence-bound scoring lose credibility in the reward process. Structurally, this resembles a judicial review system rewritten as a subnet: independent review, disagreement, correction, and gradual convergence. The point is not to make law objective. The point is to make fabricated certainty economically visible.
 
 ---
 
@@ -252,13 +277,13 @@ The full corpus, trap set, validator implementation, and generated miner outputs
 Demo repository:
 
 ```text
-To be added after public repo creation.
+https://github.com/alexfanzong/LUO-subnet-demo
 ```
 
 Live demo:
 
 ```text
-To be added after GitHub Pages deployment.
+Pending GitHub Pages deployment.
 ```
 
 ---

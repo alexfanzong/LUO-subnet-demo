@@ -1,5 +1,7 @@
 # LUO - Legal Uncertainty Oracle
 
+> On Bittensor, LUO lets permissionless miners produce cross-jurisdictional legal risk topology maps through evidence-constrained claim verification.
+
 **LUO (Legal Uncertainty Oracle)** is legal uncertainty infrastructure for mapping, retrieving, and validating cross-jurisdiction legal divergence.
 
 LUO does not try to force one legal answer. It preserves disagreement, anchors claims to evidence, and exposes fabricated certainty.
@@ -84,7 +86,7 @@ The MVP is organized around four roles:
 
 - **User:** asks a cross-jurisdiction legal question.
 - **Miner:** retrieves evidence and produces jurisdiction-aware claims.
-- **Validator:** checks citation existence, fabricated-reference traps, and reasoning coherence.
+- **Validator:** checks citation existence, fabricated-reference traps, and claim-evidence closure.
 - **Challenge layer:** future staking mechanism for appealing or disputing validator scores.
 
 The design goal is not to replace lawyers or sovereign legal interpretation. LUO maps where legal authority diverges, where evidence is silent, and where a model has forged certainty out of that silence.

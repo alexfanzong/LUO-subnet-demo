@@ -10,7 +10,7 @@ This document is intentionally public-safe. It explains the architecture without
 User question
   -> miner retrieves jurisdiction-aware evidence
   -> miner produces a cited legal uncertainty map
-  -> validator audits citations, trap exposure, and reasoning coherence
+  -> validator audits citation existence, synthetic trap exposure, and claim-evidence closure
   -> consensus rewards faithful uncertainty mapping
 ```
 
@@ -59,8 +59,8 @@ Synthetic traps are a mechanism-design tool. They make fabricated certainty econ
 Validators evaluate miner outputs across three broad dimensions:
 
 - whether cited source IDs exist,
-- whether the miner cites synthetic traps,
-- whether the reasoning preserves the actual structure of legal divergence.
+- whether the miner exposes itself to synthetic traps,
+- whether each claim stays closed within the cited evidence boundary.
 
 The MVP keeps validator scoring reproducible for demo purposes. Later versions can add LLM-as-Judge review and multi-validator consensus.
 
