@@ -88,8 +88,7 @@ Validators score miner outputs across three independent dimensions:
    Does the miner avoid citing synthetic trap authorities? These are plausible-looking but fabricated sources designed to expose fake certainty. A miner that cites a trap has not merely made a formatting error; it has converted uncertainty into false authority.
 
 3. **Claim-Evidence Closure**  
-   Does the reasoning preserve the structure of legal divergence? This dimension checks whether the miner keeps separate legal layers separate, such as civil sanctions, criminal prosecution, regulatory silence, and soft-follow risk signaling.
-   Claim-evidence closure measures whether a legal claim actually follows from the cited evidence, rather than whether the prose sounds persuasive.
+   Does the legal claim actually follow from the cited evidence? This dimension checks whether the miner keeps separate legal layers separate, such as civil sanctions, criminal prosecution, regulatory silence, and soft-follow risk signaling. Claim-evidence closure measures evidence-bound support, rather than whether the prose sounds persuasive.
 
 The MVP uses a reproducible demo scoring formula:
 

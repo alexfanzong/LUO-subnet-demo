@@ -105,20 +105,27 @@ The design goal is not to replace lawyers or sovereign legal interpretation. LUO
 - Miner output tiers and validator scoring concept.
 - Static demo UI and presentation flow.
 
-### Phase 2 - Staked Challenge Layer
+### Phase 2 - Live Retrieval and Miner Generation
+
+- Connect the demo surface to local corpus retrieval.
+- Enable OpenAI-compatible or Bittensor-native miner generation.
+- Keep validator audit deterministic and citation-grounded.
+- Expand benchmark question types beyond the initial Tornado Cash case.
+
+### Phase 3 - Staked Challenge Layer
 
 - Let participants challenge validator scores by staking.
 - Treat challenges as an appeal mechanism for legal reasoning.
 - Track whether challenged scores converge or diverge under review.
 - Reward validators that anticipate durable consensus, not just immediate majority opinion.
 
-### Phase 3 - RWA Vertical Market
+### Phase 4 - RWA Vertical Market
 
 - Extend from Tornado Cash to tokenized real-world assets.
 - Map divergence across securities, commodities, banking, sanctions, tax, custody, and cross-border distribution rules.
 - Package jurisdictional divergence maps as an intelligence product for lawyers, compliance teams, issuers, custodians, and investors.
 
-### Phase 4 - Production Subnet Candidate
+### Phase 5 - Production Subnet Candidate
 
 - Miner/validator task specification.
 - Public benchmark methodology.
