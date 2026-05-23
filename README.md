@@ -13,7 +13,7 @@ Modern legal and compliance work is increasingly cross-border, but legal answers
 The long-term goal is to build infrastructure where:
 
 - miners retrieve jurisdiction-aware legal evidence,
-- validators audit citations and reasoning,
+- validators audit citations and claim-evidence closure,
 - synthetic traps expose fabricated authority,
 - economic incentives reward faithful uncertainty mapping,
 - users receive a topology of legal divergence rather than a false universal answer.
@@ -63,6 +63,11 @@ This public demo repository contains only the public-facing demo surface and arc
 ├── requirements.txt            # Python preview dependencies
 └── README.md                   # Public project overview
 ```
+
+## Submission Links
+
+- **Full proposal:** [docs/IDEATHON_SUBMISSION.md](docs/IDEATHON_SUBMISSION.md)
+- **Pitch demo:** [Live GitHub Pages demo](https://alexfanzong.github.io/LUO-subnet-demo/) / [source HTML](pitch_demo_terminal/index.html)
 
 ## Static Demo UI
 

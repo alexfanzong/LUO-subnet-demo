@@ -4,7 +4,7 @@
 
 **Project:** LUO - Legal Uncertainty Oracle  
 **Author:** Alex Fan  
-**Affiliation:** Cornell Law School / Programmable Compliance Architect  
+**Legal background:** Cornell Law School / Programmable Compliance Architect  
 **Demo context:** Bittensor AI Subnet Ideathon, Shanghai, 2026-05-23
 
 > On Bittensor, LUO lets permissionless miners produce cross-jurisdictional legal risk topology maps through evidence-constrained claim verification.
@@ -283,7 +283,7 @@ https://github.com/alexfanzong/LUO-subnet-demo
 Live demo:
 
 ```text
-Pending GitHub Pages deployment.
+https://alexfanzong.github.io/LUO-subnet-demo/
 ```
 
 ---
