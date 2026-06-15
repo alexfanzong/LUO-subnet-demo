@@ -1,145 +1,208 @@
-# LUO - Legal Uncertainty Oracle
+<a id="readme-top"></a>
 
-> On Bittensor, LUO lets permissionless miners produce cross-jurisdictional legal risk topology maps through evidence-constrained claim verification.
+<div align="center">
 
-**LUO (Legal Uncertainty Oracle)** is legal uncertainty infrastructure for mapping, retrieving, and validating cross-jurisdiction legal divergence.
+# LUO
 
-LUO does not try to force one legal answer. It preserves disagreement, anchors claims to evidence, and exposes fabricated certainty.
+### Legal Uncertainty Oracle
 
-## Project Positioning
+Source-backed legal divergence maps for cross-border Web3 compliance.
 
-Modern legal and compliance work is increasingly cross-border, but legal answers are still usually delivered one jurisdiction at a time. LUO treats the structure of legal disagreement itself as the product.
+[View Demo](https://alexfanzong.github.io/LUO-subnet-demo/) ·
+[Architecture](docs/ARCHITECTURE.md) ·
+[Ideathon Proposal](docs/IDEATHON_SUBMISSION.md)
 
-The long-term goal is to build infrastructure where:
+</div>
 
-- miners retrieve jurisdiction-aware legal evidence,
-- validators audit citations and claim-evidence closure,
-- synthetic traps expose fabricated authority,
-- economic incentives reward faithful uncertainty mapping,
-- users receive a topology of legal divergence rather than a false universal answer.
+---
 
-In short: **Legal Uncertainty Infrastructure**, not a legal chatbot.
+## About The Project
 
-## Current Status - MVP v1.0
+LUO is a public-safe demo of a legal uncertainty oracle for Web3 builders.
 
-MVP v1.0 demonstrates the core mechanism end-to-end:
+It does not try to produce one universal legal answer. Instead, it asks a harder question:
 
-- Static pitch/demo UI for explaining the subnet mechanism.
-- Tornado Cash legal-divergence case study.
-- 46 real source entries + 5 synthetic traps in the private evaluation corpus.
-- 4 target jurisdictions: United States, Netherlands, Switzerland, and Hong Kong, plus a cross-jurisdiction comparison layer.
-- Three miner quality tiers used to demonstrate citation auditing and fabricated-reference detection.
-- Public-safe architecture overview for the miner / validator / challenge flow.
+> When an AI gives a cross-border legal answer, where is the source, what exactly does it support, which jurisdiction disagrees, and where is the model pretending certainty?
 
-The public demo surface is designed to work without paid APIs, without live model availability, and without exposing the private benchmark corpus.
+The first LUO prototype was built for the **Bittensor AI Subnet Ideathon in Shanghai on 2026-05-23**. It uses a Tornado Cash legal-divergence case study to show how the same protocol can produce different legal signals across jurisdictions.
 
-## Demo Thesis
+The long-term direction is broader: source-backed legal divergence and overconfidence detection for RWA, stablecoins, custody, sanctions, cross-border payments, and programmable compliance.
 
-The most dangerous legal failure in an AI workflow is not uncertainty. It is certainty backed by citations that do not exist.
+![Evidence-bound legal risk map](submission_assets/figure1_evidence_bound_risk_map.png)
 
-The current MVP uses Tornado Cash as the test case:
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-- **United States:** internal split between OFAC sanctions, Fifth Circuit reversal, and DOJ prosecution.
-- **Netherlands:** criminal conviction path against Alexey Pertsev.
-- **Switzerland:** framework-only evidence; no Tornado Cash-specific FINMA position.
-- **Hong Kong:** soft-follow risk signaling; no independent Tornado Cash-specific mandate.
+## Why LUO Exists
 
-## Repository Structure
+Legal AI often fails in a specific way: it sounds certain before the law is certain.
 
-This public demo repository contains only the public-facing demo surface and architecture overview.
+That failure matters more in cross-border Web3, where a single product may touch securities law, sanctions, custody, banking, token transfer rules, market access, and regulator-specific guidance across several jurisdictions.
+
+LUO turns that failure mode into a validator task:
+
+- preserve jurisdictional disagreement,
+- separate product-side claims from official legal authority,
+- distinguish silence from permission,
+- bind every material claim to a source,
+- expose fabricated citations and fabricated certainty.
+
+The goal is not to replace lawyers. The goal is to make legal uncertainty visible before a team commits to a market, launch sequence, or compliance story.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Current Demo
+
+The current public demo demonstrates the core LUO mechanism end-to-end:
+
+- a static pitch/demo UI,
+- a Tornado Cash cross-jurisdiction case study,
+- four target jurisdictions: United States, Netherlands, Switzerland, and Hong Kong,
+- 46 real source entries and 5 synthetic trap entries in the evaluation setup,
+- three miner quality tiers,
+- validator scoring for citation coverage, synthetic trap resistance, and claim-evidence closure.
+
+The public repository contains only the demo surface and supporting documentation.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Built With
+
+- Static HTML, CSS, and JavaScript for the public demo surface
+- Python and Streamlit for optional local preview
+- Local retrieval concepts using embeddings, FAISS, and source IDs
+- A Bittensor-style miner / validator / challenge-layer design
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## How It Works
 
 ```text
-.
-├── index.html                  # Optional GitHub Pages entrypoint
-├── pitch_demo_terminal/
-│   ├── index.html              # Static pitch/demo UI
-│   └── preview.py              # Streamlit wrapper for local preview
-├── docs/
-│   ├── ARCHITECTURE.md         # Architecture overview
-│   └── IDEATHON_SUBMISSION.md  # Submission proposal draft
-├── submission_assets/
-│   ├── figure1_evidence_bound_risk_map.png
-│   └── screenshots/            # Demo screenshots for proposal / README use
-├── requirements.txt            # Python preview dependencies
-└── README.md                   # Public project overview
+User question
+  -> miner retrieves jurisdiction-aware evidence
+  -> miner produces a cited legal divergence map
+  -> validator audits citations, traps, and claim-evidence closure
+  -> rewards favor faithful uncertainty mapping over confident overreach
 ```
 
-## Submission Links
+The key design choice is that LUO does not score miners for giving the most confident answer. It scores whether the answer stays inside the evidence boundary.
 
-- **Full proposal:** [docs/IDEATHON_SUBMISSION.md](docs/IDEATHON_SUBMISSION.md)
-- **Pitch demo:** [Live GitHub Pages demo](https://alexfanzong.github.io/LUO-subnet-demo/) / [source HTML](pitch_demo_terminal/index.html)
+| Layer | LUO Design |
+| --- | --- |
+| Subnet commodity | Cross-jurisdiction legal divergence maps |
+| Miner task | Retrieve evidence and produce jurisdiction-aware claims |
+| Validator task | Check citation existence, synthetic trap resistance, and claim-evidence closure |
+| Ground truth | Evidence boundary, not final legal truth |
+| Anti-gaming | Hidden traps, rotating corpus, held-out claims, and future staked challenges |
+| First market | Pre-opinion legal risk intelligence for Web3 and RWA teams |
 
-## Static Demo UI
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-The static UI lives at:
+## Getting Started
 
-```text
-pitch_demo_terminal/index.html
+### Prerequisites
+
+The static demo can be opened directly in a browser.
+
+For the optional Streamlit preview, use Python 3.10+.
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/alexfanzong/LUO-subnet-demo.git
+cd LUO-subnet-demo
 ```
 
-For local browser preview, open the HTML file directly.
+Install optional preview dependencies:
 
-For Streamlit preview:
+```bash
+pip install -r requirements.txt
+```
+
+Run the Streamlit wrapper:
 
 ```bash
 streamlit run pitch_demo_terminal/preview.py
 ```
 
-## Architecture
+Or open the static demo directly:
 
-The MVP is organized around four roles:
+```text
+pitch_demo_terminal/index.html
+```
 
-- **User:** asks a cross-jurisdiction legal question.
-- **Miner:** retrieves evidence and produces jurisdiction-aware claims.
-- **Validator:** checks citation existence, fabricated-reference traps, and claim-evidence closure.
-- **Challenge layer:** future staking mechanism for appealing or disputing validator scores.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-The design goal is not to replace lawyers or sovereign legal interpretation. LUO maps where legal authority diverges, where evidence is silent, and where a model has forged certainty out of that silence.
+## Usage
+
+Use the demo to walk through LUO's core mechanism:
+
+1. Start with a cross-jurisdiction legal question.
+2. Watch the miner retrieve jurisdiction-tagged evidence.
+3. Compare faithful, compressed, and fabricated miner outputs.
+4. Review how the validator separates citation coverage from actual claim support.
+5. Use the atlas view to see why one legal answer is not enough.
+
+The demo is designed for pitch review, mechanism explanation, and public-safe discussion. It is not legal advice and should not be treated as a production legal research tool.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Repository Structure
+
+```text
+.
+├── index.html
+├── pitch_demo_terminal/
+│   ├── index.html
+│   └── preview.py
+├── docs/
+│   ├── ARCHITECTURE.md
+│   └── IDEATHON_SUBMISSION.md
+├── submission_assets/
+│   ├── figure1_evidence_bound_risk_map.png
+│   ├── figure2_subnet_protocol_flow.png
+│   └── figure3_validator_scoring_breakdown.png
+├── requirements.txt
+└── README.md
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Roadmap
 
-### Phase 1 - Evidence and Trap MVP: Complete
+- [x] Build the first public-safe subnet demo around Tornado Cash legal divergence.
+- [x] Demonstrate miner quality tiers and fabricated-citation detection.
+- [x] Publish architecture and ideathon proposal materials.
+- [ ] Add a source-backed RWA deep sample using Ondo / tokenized treasuries as the flagship commercial case.
+- [ ] Convert divergence pairs into a reusable claim schema with source locators, provenance binding, and review status.
+- [ ] Add live retrieval and miner generation while keeping validator audit deterministic.
+- [ ] Design a staked challenge layer for disputed validator scores.
+- [ ] Prepare a production subnet candidate with public benchmark methodology and anti-gaming design.
 
-- Tornado Cash cross-jurisdiction case study.
-- Synthetic trap set for fabricated citation detection.
-- Miner output tiers and validator scoring concept.
-- Static demo UI and presentation flow.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Phase 2 - Live Retrieval and Miner Generation
+## Evaluation Boundary
 
-- Connect the demo surface to local corpus retrieval.
-- Enable OpenAI-compatible or Bittensor-native miner generation.
-- Keep validator audit deterministic and citation-grounded.
-- Expand benchmark question types beyond the initial Tornado Cash case.
+This repository contains the public demo surface and supporting documentation for LUO.
 
-### Phase 3 - Staked Challenge Layer
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-- Let participants challenge validator scores by staking.
-- Treat challenges as an appeal mechanism for legal reasoning.
-- Track whether challenged scores converge or diverge under review.
-- Reward validators that anticipate durable consensus, not just immediate majority opinion.
+## License
 
-### Phase 4 - RWA Vertical Market
+This repository is released under the Apache License 2.0.
 
-- Extend from Tornado Cash to tokenized real-world assets.
-- Map divergence across securities, commodities, banking, sanctions, tax, custody, and cross-border distribution rules.
-- Package jurisdictional divergence maps as an intelligence product for lawyers, compliance teams, issuers, custodians, and investors.
+The license applies only to the public demo code, documentation, and assets included in this repository.
 
-### Phase 5 - Production Subnet Candidate
-
-- Miner/validator task specification.
-- Public benchmark methodology.
-- Multi-validator scoring aggregation.
-- Production-grade citation audit pipeline.
-- RWA-focused legal divergence datasets.
-
-## Origins
-
-LUO's first public prototype was prepared for the **Bittensor AI Subnet Ideathon in Shanghai on 2026-05-23**. The event is the launch context, not the project boundary.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Contact
 
 Alex Fan  
 Cornell Law School  
 Programmable Compliance Architect  
-X: `@itsAlexFan`
+X: [@itsAlexFan](https://x.com/itsAlexFan)
+
+Project Link: [https://github.com/alexfanzong/LUO-subnet-demo](https://github.com/alexfanzong/LUO-subnet-demo)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
