@@ -2,6 +2,8 @@
 
 <div align="center">
 
+<img src="submission_assets/luo-logo.png" alt="LUO logo" width="160">
+
 # LUO
 
 ### Legal Uncertainty Oracle
@@ -179,12 +181,6 @@ The demo is designed for pitch review, mechanism explanation, and public-safe di
 - [ ] Add live retrieval and miner generation while keeping validator audit deterministic.
 - [ ] Design a staked challenge layer for disputed validator scores.
 - [ ] Prepare a production subnet candidate with public benchmark methodology and anti-gaming design.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Evaluation Boundary
-
-This repository contains the public demo surface and supporting documentation for LUO.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
