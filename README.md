@@ -4,9 +4,7 @@
 
 <img src="submission_assets/luo-logo.png" alt="LUO logo" width="160">
 
-# LUO
-
-### Legal Uncertainty Oracle
+<h1>LUO: Legal Uncertainty Oracle</h1>
 
 Source-backed legal divergence maps for cross-border Web3 compliance.
 
